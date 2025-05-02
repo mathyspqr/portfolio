@@ -38,7 +38,7 @@ export default function Home() {
     const handleScroll = () => {
       const sections = ["accueil", "projets", "apropos", "parcours", "contact"];
       const scrollPosition = window.scrollY + 100;
-      
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -53,14 +53,14 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initialiser la section active au chargement
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     // Vérifie si une préférence existe déjà dans le localStorage
     const savedDarkMode = localStorage.getItem("darkMode");
-    
+
     // Si une préférence existe, l'utiliser, sinon garder le mode sombre par défaut
     if (savedDarkMode !== null) {
       setDarkMode(savedDarkMode === "true");
@@ -230,16 +230,42 @@ export default function Home() {
               className="order-2 md:order-1"
             >
               <div className="mb-6">
-                <span className="text-lg font-medium text-blue-500">Bienvenue sur mon portfolio</span>
+                <motion.span 
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-lg font-medium text-blue-500"
+                >
+                  Bienvenue sur mon portfolio
+                </motion.span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Je suis <span className="text-blue-500">Mathys</span>, <br />
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Développeur Full-Stack</span>
+                <motion.span
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="block"
+                >
+                  Je suis <span className="text-blue-500">Mathys</span>,
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text bg-size-200 animate-gradient"
+                >
+                  Développeur Full-Stack
+                </motion.span>
               </h1>
-              <p className="text-lg mb-8 text-foreground/80 max-w-md">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
+                className="text-lg mb-8 text-foreground/80 max-w-md"
+              >
                 Je transforme des idées en expériences web performantes et intuitives,
                 alliant créativité technique et design moderne.
-              </p>
+              </motion.p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.a
                   whileHover={{ scale: 1.05 }}
@@ -265,17 +291,15 @@ export default function Home() {
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                   </svg>
                 </motion.a>
+                
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="#projets"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('projets');
-                  }}
+                  href="/Motivation.pdf"
+                  download
                   className="rounded-full border border-solid border-blue-500/30 dark:border-blue-500/50 transition-colors flex items-center justify-center bg-transparent text-blue-500 hover:bg-blue-500/10 font-medium text-sm sm:text-base h-10 sm:h-12 px-6 sm:px-8"
                 >
-                  Voir mes projets
+                  Lettre de motivation
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -286,6 +310,37 @@ export default function Home() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </motion.a>
+                
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="#projets"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('projets');
+                  }}
+                  className="rounded-full border border-solid border-blue-500/30 dark:border-blue-500/50 transition-colors flex items-center justify-center bg-transparent text-blue-500 hover:bg-blue-500/10 font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-6"
+                >
+                  <span className="whitespace-nowrap">Voir mes projets</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-1 flex-shrink-0"
                   >
                     <path d="m9 18 6-6-6-6" />
                   </svg>
@@ -383,12 +438,15 @@ export default function Home() {
             >
               <div className="rounded-xl overflow-hidden border border-black/[.08] dark:border-white/[.145] transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/10 flex flex-col h-full">
                 <div className="aspect-video relative overflow-hidden">
-                  <Image
-                    src="/infirmiere-app.jpg"
-                    alt="Projet Infirmière"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                  />
+                  {/* Remplacer l'image par un dégradé de couleurs */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-900 flex items-center justify-center">
+                    <div className="text-center p-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                      <span className="text-white font-bold text-xl">Infirmière App</span>
+                    </div>
+                  </div>
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
@@ -437,12 +495,15 @@ export default function Home() {
             >
               <div className="rounded-xl overflow-hidden border border-black/[.08] dark:border-white/[.145] transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/10 flex flex-col h-full">
                 <div className="aspect-video relative overflow-hidden">
-                  <Image
-                    src="/quiz-app.jpg"
-                    alt="Projet Quizz"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                  />
+                  {/* Remplacer l'image par un dégradé de couleurs */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-800 flex items-center justify-center">
+                    <div className="text-center p-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-white font-bold text-xl">Quiz App</span>
+                    </div>
+                  </div>
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
@@ -493,21 +554,25 @@ export default function Home() {
               }
             >
               <div className="rounded-xl overflow-hidden border border-black/[.08] dark:border-white/[.145] transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/10 flex flex-col h-full">
-                <div className="aspect-video relative overflow-hidden">
-                  <Image
-                    src="/spotify-clone.jpg"
-                    alt="Projet Spotilike"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                  />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="aspect-video relative overflow-hidden">
+  {/* Remplacer l'image par un dégradé de couleurs */}
+  <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-black flex items-center justify-center">
+    <div className="text-center p-4">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+      </svg>
+      <span className="text-white font-bold text-xl">Spotilike</span>
+    </div>
+  </div>
+  
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-                  {/* Badge "Voir le projet" */}
-                  <div className="absolute bottom-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 pointer-events-none">
-                    Voir le projet
-                  </div>
-                </div>
+  {/* Badge "Voir le projet" */}
+  <div className="absolute bottom-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 pointer-events-none">
+    Voir le projet
+  </div>
+</div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold mb-2">Spotilike</h3>
                   <p className="text-foreground/80 mb-4 flex-grow">
@@ -751,6 +816,13 @@ export default function Home() {
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                     </svg>
                     Vue.js (notions)
+                  </span>
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black dark:text-white">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z"></path>
+                    </svg>
+                    Next.js
                   </span>
                 </div>
               </div>
@@ -1092,24 +1164,22 @@ export default function Home() {
                 <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
                   <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
                   <div className="ml-10">
-                    <h4 className="text-xl font-semibold mb-2">Développeur Fullstack – COMPANY NAME</h4>
-                    <p className="text-sm text-foreground/60 mb-3">Janvier 2022 - Présent</p>
+                    <h4 className="text-xl font-semibold mb-2">Développeur Web - Logeas</h4>
+                    <p className="text-sm text-foreground/60 mb-3">Août 2022 - Septembre 2025 (Alternance)</p>
                     <p className="text-foreground/80 mb-4">
-                      Conception et développement d&apos;applications web avec React, Next.js et Node.js.
-                      Création d&apos;interfaces utilisateur performantes et intuitives. Intégration avec diverses
-                      API et services tiers pour offrir des fonctionnalités complètes aux utilisateurs.
+                      Réécriture d&apos;un client lourd de comptabilité et gestion de fichier vers une interface full web en utilisant Angular côté 
+                      client et Lazarus (RAD/EDI multiplateforme développé en Free Pascal) côté serveur.
                     </p>
                     <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
-                      <li>Développement de nouvelles fonctionnalités pour une application SaaS</li>
-                      <li>Optimisation des performances et de l&apos;accessibilité</li>
-                      <li>Mise en place de tests automatisés</li>
-                      <li>Collaboration avec l&apos;équipe design pour implémenter des interfaces utilisateur</li>
+                      <li>Développement d&apos;interfaces modernes avec Angular</li>
+                      <li>Migration d&apos;applications legacy vers des solutions web</li>
+                      <li>Travail en équipe sur un projet de refonte majeur</li>
                     </ul>
                     <div className="flex flex-wrap gap-2 mt-3">
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">React</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Node.js</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">MongoDB</span>
+                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Angular</span>
                       <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">TypeScript</span>
+                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Free Pascal</span>
+                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Lazarus</span>
                     </div>
                   </div>
                 </div>
@@ -1117,28 +1187,21 @@ export default function Home() {
                 <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
                   <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
                   <div className="ml-10">
-                    <h4 className="text-xl font-semibold mb-2">Développeur Frontend – COMPANY NAME</h4>
-                    <p className="text-sm text-foreground/60 mb-3">Juin 2020 - Décembre 2021</p>
+                    <h4 className="text-xl font-semibold mb-2">Employé polyvalent - Casino</h4>
+                    <p className="text-sm text-foreground/60 mb-3">Avril 2021 - Août 2022</p>
                     <p className="text-foreground/80 mb-4">
-                      Développement d&apos;interfaces utilisateur avec Vue.js et Nuxt.js.
-                      Intégration d&apos;APIs RESTful et optimisation des performances pour une expérience
-                      utilisateur fluide et réactive.
+                      Employé polyvalent au Casino d&apos;Estancarbon avec diverses responsabilités.
                     </p>
                     <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
-                      <li>Développement de composants UI réutilisables</li>
-                      <li>Intégration avec des API backend</li>
-                      <li>Optimisation des temps de chargement</li>
-                      <li>Adaptation des interfaces pour mobile et tablette</li>
+                      <li>Confection de pains et viennoiseries</li>
+                      <li>Hôte de caisse</li>
+                      <li>Service client et gestion des rayons</li>
                     </ul>
-                    <div className="flex flex-wrap gap-2 mt-3">
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Vue.js</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">JavaScript</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">CSS</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Vuex</span>
-                    </div>
+                    <p className="text-sm text-foreground/60 mt-2">
+                      D817 Lieu Dit Paban, Route Nationale 117, 31800 Estancarbon
+                    </p>
                   </div>
                 </div>
-
               </motion.div>
             )}
 
@@ -1153,53 +1216,72 @@ export default function Home() {
                 <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
                   <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
                   <div className="ml-10">
-                    <h4 className="text-xl font-semibold mb-2">Master en Développement Web – ÉCOLE</h4>
-                    <p className="text-sm text-foreground/60 mb-3">2018 - 2020</p>
+                    <h4 className="text-xl font-semibold mb-2">Mastère Lead Dev Xpert - IPI</h4>
+                    <p className="text-sm text-foreground/60 mb-3">2025 - 2027 (Prévu)</p>
                     <p className="text-foreground/80 mb-4">
-                      Spécialisation en développement d&apos;applications web modernes.
-                      Formation approfondie sur les frameworks JavaScript et les méthodologies agiles.
+                      Mastère professionnel Lead Dev Xpert : Expert en développement logiciel.
                     </p>
-                    <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
-                      <li>Spécialisation en applications web avancées</li>
-                      <li>Projet de fin d&apos;études: Plateforme e-commerce avec React et Node.js</li>
-                      <li>Stage de 6 mois en développement web</li>
-                      <li>Certification en Développement Web Full Stack</li>
-                    </ul>
-                    <div className="flex flex-wrap gap-2 mt-3">
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">JavaScript</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">React</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Node.js</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">UX/UI</span>
-                    </div>
+                    <p className="text-sm text-foreground/60 mt-2">
+                      186 Rte de Grenade, 31700 Blagnac
+                    </p>
                   </div>
                 </div>
-
 
                 <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
                   <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
                   <div className="ml-10">
-                    <h4 className="text-xl font-semibold mb-2">Licence en Informatique – UNIVERSITÉ</h4>
-                    <p className="text-sm text-foreground/60 mb-3">2015 - 2018</p>
+                    <h4 className="text-xl font-semibold mb-2">Bachelor Développeur IA et Data Science - EPSI</h4>
+                    <p className="text-sm text-foreground/60 mb-3">2024 - 2025 (Prévu)</p>
                     <p className="text-foreground/80 mb-4">
-                      Formation généraliste en informatique avec spécialisation en développement logiciel.
-                      Projets pratiques de programmation et bases de données, acquisition des fondamentaux
-                      de l&apos;algorithmique et des structures de données.
+                      Bachelor Développeur en Intelligence Artificielle et Data Science, option FullStack.
                     </p>
-                    <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
-                      <li>Fondamentaux de la programmation et des algorithmes</li>
-                      <li>Bases de données relationnelles et SQL</li>
-                      <li>Développement d&apos;applications Java</li>
-                      <li>Introduction au développement web</li>
-                    </ul>
-                    <div className="flex flex-wrap gap-2 mt-3">
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Java</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">SQL</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Algo</span>
-                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">HTML/CSS</span>
-                    </div>
+                    <p className="text-sm text-foreground/60 mt-2">
+                      11 Rue de la Tuilerie, 31130 Balma
+                    </p>
                   </div>
                 </div>
 
+                <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
+                  <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
+                  <div className="ml-10">
+                    <h4 className="text-xl font-semibold mb-2">BTS SIO SLAM - ESICAD</h4>
+                    <p className="text-sm text-foreground/60 mb-3">2022 - 2024</p>
+                    <p className="text-foreground/80 mb-4">
+                      BTS Services informatiques aux organisations option B solutions logicielles et applications métiers (SIO SLAM).
+                    </p>
+                    <p className="text-sm text-foreground/60 mt-2">
+                      6 Rue Ampère, 31670 Labège
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
+                  <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
+                  <div className="ml-10">
+                    <h4 className="text-xl font-semibold mb-2">Baccalauréat STI2D - Lycée Paul Mathou</h4>
+                    <p className="text-sm text-foreground/60 mb-3">2019 - 2022</p>
+                    <p className="text-foreground/80 mb-4">
+                      Baccalauréat STI2D Spécialité SIN (Systèmes d&apos;Information et Numérique), Mention Assez-Bien.
+                    </p>
+                    <p className="text-sm text-foreground/60 mt-2">
+                      29 Pl. de la Prairie, 31210 Gourdan-Polignan
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
+                  <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
+                  <div className="ml-10">
+                    <h4 className="text-xl font-semibold mb-2">Brevet des collèges - Collège Armand Latour</h4>
+                    <p className="text-sm text-foreground/60 mb-3">2018 - 2019</p>
+                    <p className="text-foreground/80 mb-4">
+                      Brevet des collèges obtenu avec Mention Bien.
+                    </p>
+                    <p className="text-sm text-foreground/60 mt-2">
+                      Fontagneres, 31160 Aspet
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             )}
           </div>
