@@ -24,7 +24,7 @@ export default function Home() {
   const [formStatus, setFormStatus] = useState({
     loading: false,
     success: false,
-    error: null
+    error: null as string | null
   });
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
