@@ -225,11 +225,11 @@ export default function Home() {
                 <span className="text-lg font-medium text-blue-500">Bienvenue sur mon portfolio</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Je suis <span className="text-blue-500">Mathys</span>, <br/> 
+                Je suis <span className="text-blue-500">Mathys</span>, <br />
                 <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Développeur Full-Stack</span>
               </h1>
               <p className="text-lg mb-8 text-foreground/80 max-w-md">
-                Je transforme des idées en expériences web performantes et intuitives, 
+                Je transforme des idées en expériences web performantes et intuitives,
                 alliant créativité technique et design moderne.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -268,18 +268,18 @@ export default function Home() {
                   className="rounded-full border border-solid border-blue-500/30 dark:border-blue-500/50 transition-colors flex items-center justify-center bg-transparent text-blue-500 hover:bg-blue-500/10 font-medium text-sm sm:text-base h-10 sm:h-12 px-6 sm:px-8"
                 >
                   Voir mes projets
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="18" 
-                    height="18" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <path d="m9 18 6-6-6-6"/>
+                    <path d="m9 18 6-6-6-6" />
                   </svg>
                 </motion.a>
               </div>
@@ -522,39 +522,39 @@ export default function Home() {
 
             {/* Carte "Et plus encore..." */}
             <motion.div
-            className="group cursor-pointer h-full col-span-1 md:col-span-3 lg:col-span-3"
-            whileHover={{ y: -5, transition: { duration: 0.2 } }}
-          >
-            <div className="rounded-xl overflow-hidden border border-black/[.08] dark:border-white/[.145] border-dashed transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/10 flex flex-col h-full min-h-[200px] bg-gradient-to-br from-transparent to-black/[.02] dark:to-white/[.03]">
-              <div className="p-6 flex flex-col flex-grow items-center justify-center text-center">
-                <div className="mb-4 bg-blue-500/10 dark:bg-blue-500/20 p-3 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Et bien plus encore...</h3>
-                <p className="text-foreground/70 mb-4">
-                J&apos;ai réalisé de nombreux autres projets scolaires et personnels. Retrouvez tous mes travaux sur GitHub !                </p>
-                <motion.a 
-                  href="https://github.com/mathyspqr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-2 mt-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 flex items-center gap-1.5 text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              className="group cursor-pointer h-full col-span-1 md:col-span-3 lg:col-span-3"
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            >
+              <div className="rounded-xl overflow-hidden border border-black/[.08] dark:border-white/[.145] border-dashed transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/10 flex flex-col h-full min-h-[200px] bg-gradient-to-br from-transparent to-black/[.02] dark:to-white/[.03]">
+                <div className="p-6 flex flex-col flex-grow items-center justify-center text-center">
+                  <div className="mb-4 bg-blue-500/10 dark:bg-blue-500/20 p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
                     </svg>
-                    Voir sur GitHub
-                  </span>
-                </motion.a>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Et bien plus encore...</h3>
+                  <p className="text-foreground/70 mb-4">
+                    J&apos;ai réalisé de nombreux autres projets scolaires et personnels. Retrouvez tous mes travaux sur GitHub !                </p>
+                  <motion.a
+                    href="https://github.com/mathyspqr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-2 mt-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 flex items-center gap-1.5 text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                      Voir sur GitHub
+                    </span>
+                  </motion.a>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -601,7 +601,7 @@ export default function Home() {
             <h3 className="text-2xl font-semibold mb-4 text-center">Présentation</h3>
             <div className="max-w-3xl mx-auto">
               <p className="mb-6 text-foreground/80 text-center">
-                Développeur web passionné avec une solide expérience dans la création d'applications web modernes et
+                Développeur web passionné avec une solide expérience dans la création d&apos;applications web modernes et
                 performantes. Spécialisé dans les technologies JavaScript et les frameworks modernes comme React et Next.js.
               </p>
 
@@ -633,7 +633,7 @@ export default function Home() {
                     <path d="M13 6h3a2 2 0 0 1 2 2v7"></path>
                     <line x1="6" y1="9" x2="6" y2="21"></line>
                   </svg>
-                  Esprit d'équipe
+                  Esprit d&apos;équipe
                 </span>
               </div>
 
@@ -976,8 +976,9 @@ export default function Home() {
                   </svg>
                   <span className="font-medium">Communication</span>
                 </div>
-                <p className="text-foreground/80 text-sm">Bonne vulgarisation des enjeux techniques auprès d'équipes non-tech</p>
+                <p className="text-foreground/80 text-sm">Bonne vulgarisation des enjeux techniques auprès d&apos;équipes non-tech</p>
               </div>
+
 
               <div className="bg-black/[.02] dark:bg-white/[.03] p-3 rounded-lg">
                 <div className="flex items-center gap-2 mb-2 text-blue-500">
@@ -997,10 +998,11 @@ export default function Home() {
                     <path d="M13 6h3a2 2 0 0 1 2 2v7"></path>
                     <line x1="6" y1="9" x2="6" y2="21"></line>
                   </svg>
-                  <span className="font-medium">Esprit d'équipe</span>
+                  <span className="font-medium">Esprit d&apos;équipe</span>
                 </div>
                 <p className="text-foreground/80 text-sm">Habitué à travailler en méthode agile (daily, sprint, trello/jira)</p>
               </div>
+
 
               <div className="bg-black/[.02] dark:bg-white/[.03] p-3 rounded-lg md:col-span-2">
                 <div className="flex items-center gap-2 mb-2 text-blue-500">
@@ -1085,13 +1087,13 @@ export default function Home() {
                     <h4 className="text-xl font-semibold mb-2">Développeur Fullstack – COMPANY NAME</h4>
                     <p className="text-sm text-foreground/60 mb-3">Janvier 2022 - Présent</p>
                     <p className="text-foreground/80 mb-4">
-                      Conception et développement d'applications web avec React, Next.js et Node.js.
-                      Création d'interfaces utilisateur performantes et intuitives. Intégration avec diverses
+                      Conception et développement d&apos;applications web avec React, Next.js et Node.js.
+                      Création d&apos;interfaces utilisateur performantes et intuitives. Intégration avec diverses
                       API et services tiers pour offrir des fonctionnalités complètes aux utilisateurs.
                     </p>
                     <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
                       <li>Développement de nouvelles fonctionnalités pour une application SaaS</li>
-                      <li>Optimisation des performances et de l'accessibilité</li>
+                      <li>Optimisation des performances et de l&apos;accessibilité</li>
                       <li>Mise en place de tests automatisés</li>
                       <li>Collaboration avec l&apos;équipe design pour implémenter des interfaces utilisateur</li>
                     </ul>
@@ -1110,8 +1112,8 @@ export default function Home() {
                     <h4 className="text-xl font-semibold mb-2">Développeur Frontend – COMPANY NAME</h4>
                     <p className="text-sm text-foreground/60 mb-3">Juin 2020 - Décembre 2021</p>
                     <p className="text-foreground/80 mb-4">
-                      Développement d'interfaces utilisateur avec Vue.js et Nuxt.js.
-                      Intégration d'APIs RESTful et optimisation des performances pour une expérience
+                      Développement d&apos;interfaces utilisateur avec Vue.js et Nuxt.js.
+                      Intégration d&apos;APIs RESTful et optimisation des performances pour une expérience
                       utilisateur fluide et réactive.
                     </p>
                     <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
@@ -1128,6 +1130,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
               </motion.div>
             )}
 
@@ -1145,12 +1148,12 @@ export default function Home() {
                     <h4 className="text-xl font-semibold mb-2">Master en Développement Web – ÉCOLE</h4>
                     <p className="text-sm text-foreground/60 mb-3">2018 - 2020</p>
                     <p className="text-foreground/80 mb-4">
-                      Spécialisation en développement d'applications web modernes.
+                      Spécialisation en développement d&apos;applications web modernes.
                       Formation approfondie sur les frameworks JavaScript et les méthodologies agiles.
                     </p>
                     <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
                       <li>Spécialisation en applications web avancées</li>
-                      <li>Projet de fin d&apos;études: Plateforme e-commerce avec React et Node.js                      </li>
+                      <li>Projet de fin d&apos;études: Plateforme e-commerce avec React et Node.js</li>
                       <li>Stage de 6 mois en développement web</li>
                       <li>Certification en Développement Web Full Stack</li>
                     </ul>
@@ -1163,6 +1166,7 @@ export default function Home() {
                   </div>
                 </div>
 
+
                 <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
                   <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
                   <div className="ml-10">
@@ -1171,12 +1175,12 @@ export default function Home() {
                     <p className="text-foreground/80 mb-4">
                       Formation généraliste en informatique avec spécialisation en développement logiciel.
                       Projets pratiques de programmation et bases de données, acquisition des fondamentaux
-                      de l'algorithmique et des structures de données.
+                      de l&apos;algorithmique et des structures de données.
                     </p>
                     <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
                       <li>Fondamentaux de la programmation et des algorithmes</li>
                       <li>Bases de données relationnelles et SQL</li>
-                      <li>Développement d'applications Java</li>
+                      <li>Développement d&apos;applications Java</li>
                       <li>Introduction au développement web</li>
                     </ul>
                     <div className="flex flex-wrap gap-2 mt-3">
@@ -1187,6 +1191,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
               </motion.div>
             )}
           </div>
