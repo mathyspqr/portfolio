@@ -27,6 +27,7 @@ export default function Home() {
     error: null as string | null
   });
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [disableTransitions, setDisableTransitions] = useState(true);
 
   const accueilRef = useRef<HTMLElement>(null);
   const projetsRef = useRef<HTMLElement>(null);
@@ -79,6 +80,15 @@ export default function Home() {
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
+
+  useEffect(() => {
+    // Réactiver les transitions après le rendu initial
+    const timer = setTimeout(() => {
+      setDisableTransitions(false);
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleDarkMode = () => {
     const newDarkMode = !darkMode;
@@ -166,7 +176,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased overflow-hidden">
+    <div className={`min-h-screen bg-background text-foreground antialiased overflow-hidden ${disableTransitions ? 'disable-transitions-on-load' : ''}`}>
       {/* Navigation flottante */}
       <div className="fixed top-6 right-6 z-20 flex items-center gap-4">
         <button

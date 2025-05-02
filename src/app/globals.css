@@ -40,6 +40,15 @@ button:focus {
   transition: none !important;
 }
 
+/* Ajoutez cette classe */
+.disable-transitions-on-load {
+  transition: none !important;
+}
+
+.disable-transitions-on-load * {
+  transition: none !important;
+}
+
 /* Animation de dégradé */
 @keyframes gradient {
   0% {
