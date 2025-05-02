@@ -13,7 +13,7 @@ type Project = {
 };
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState("accueil");
   const [activeTab, setActiveTab] = useState("professional");
   const [formData, setFormData] = useState({
@@ -35,48 +35,23 @@ export default function Home() {
   const contactRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const savedDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(savedDarkMode);
+    // Vérifie si une préférence existe déjà dans le localStorage
+    const savedDarkMode = localStorage.getItem("darkMode");
+    
+    // Si une préférence existe, l'utiliser, sinon garder le mode sombre par défaut
+    if (savedDarkMode !== null) {
+      setDarkMode(savedDarkMode === "true");
+    } else {
+      // Si aucune préférence, définir le mode sombre et sauvegarder dans localStorage
+      localStorage.setItem("darkMode", "true");
+    }
 
-    if (savedDarkMode) {
+    // Appliquer le mode sombre au document
+    if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-
-      const sections = [
-        { id: "accueil", ref: accueilRef, position: accueilRef.current?.offsetTop || 0 },
-        { id: "projets", ref: projetsRef, position: projetsRef.current?.offsetTop || 0 },
-        { id: "apropos", ref: aproposRef, position: aproposRef.current?.offsetTop || 0 },
-        { id: "parcours", ref: parcoursRef, position: parcoursRef.current?.offsetTop || 0 },
-        { id: "contact", ref: contactRef, position: contactRef.current?.offsetTop || 0 },
-      ];
-
-      let activeId = sections[0].id;
-      for (let i = sections.length - 1; i >= 0; i--) {
-        if (scrollPosition >= sections[i].position - 100) {
-          activeId = sections[i].id;
-          break;
-        }
-      }
-
-      setActiveSection(activeId);
-    };
-
-    // Exécuter au chargement et sur scroll
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
   }, []);
 
   const toggleDarkMode = () => {
