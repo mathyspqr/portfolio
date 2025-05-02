@@ -20,11 +20,11 @@ export default function Home() {
   });
   const [activeProject, setActiveProject] = useState(null);
 
-  const accueilRef = useRef(null);
-  const projetsRef = useRef(null);
-  const aproposRef = useRef(null);
-  const parcoursRef = useRef(null);
-  const contactRef = useRef(null);
+  const accueilRef = useRef<HTMLElement>(null);
+  const projetsRef = useRef<HTMLElement>(null);
+  const aproposRef = useRef<HTMLElement>(null);
+  const parcoursRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const savedDarkMode = localStorage.getItem("darkMode") === "true";
@@ -84,7 +84,7 @@ export default function Home() {
     }
   };
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
@@ -99,7 +99,7 @@ export default function Home() {
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData(prev => ({
       ...prev,
