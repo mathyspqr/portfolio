@@ -35,7 +35,7 @@ export async function POST(request) {
       `
     };
 
-    const response = await axios.post('https://api.brevo.com/v3/smtp/email', data, {
+    await axios.post('https://api.brevo.com/v3/smtp/email', data, {
       headers: {
         'Content-Type': 'application/json',
         'api-key': API_KEY

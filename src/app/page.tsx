@@ -363,7 +363,7 @@ export default function Home() {
                 setActiveProject({
                   title: "Application Infirmière à Domicile",
                   description:
-                    "Application web pour un cabinet d'infirmières à domicile avec gestion d'agenda, cartographie et itinéraires optimisés.",
+                    "Application web pour un cabinet d&apos;infirmières avec gestion d&apos;agenda, cartographie et itinéraires optimisés.",
                   features: [
                     "Gestion d'agenda pour les soignants",
                     "Cartographie des patients",
@@ -536,8 +536,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Et bien plus encore...</h3>
                 <p className="text-foreground/70 mb-4">
-                  J'ai réalisé de nombreux autres projets scolaires et personnels. Retrouvez tous mes travaux sur GitHub !
-                </p>
+                J&apos;ai réalisé de nombreux autres projets scolaires et personnels. Retrouvez tous mes travaux sur GitHub !                </p>
                 <motion.a 
                   href="https://github.com/mathyspqr"
                   target="_blank"
