@@ -39,6 +39,11 @@ export default function Home() {
       const sections = ["accueil", "projets", "apropos", "parcours", "contact"];
       const scrollPosition = window.scrollY + 100;
 
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+        setActiveSection("contact");
+        return;
+      }
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -52,26 +57,22 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initialiser la section active au chargement
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    // Vérifie si une préférence existe déjà dans le localStorage
     const savedDarkMode = localStorage.getItem("darkMode");
 
-    // Si une préférence existe, l'utiliser, sinon garder le mode sombre par défaut
     if (savedDarkMode !== null) {
       setDarkMode(savedDarkMode === "true");
     } else {
-      // Si aucune préférence, définir le mode sombre et sauvegarder dans localStorage
       localStorage.setItem("darkMode", "true");
     }
   }, []);
 
   useEffect(() => {
-    // Appliquer le mode sombre au document
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
