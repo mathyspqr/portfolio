@@ -22,15 +22,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans, Arial, Helvetica, sans-serif);
-  transition: background-color 0.6s ease, color 0.6s ease;
+  /* Suppression de la transition pour éviter le clignotement */
 }
 
-/* Transition pour tous les éléments qui changent de couleur */
+/* Suppression des transitions globales qui causent le clignotement */
+/* 
 *, *::before, *::after {
   transition: background-color 0.6s ease, border-color 0.6s ease, color 0.6s ease, fill 0.6s ease, stroke 0.6s ease, opacity 0.6s ease;
 }
+*/
 
-/* Exceptions pour les éléments qui ne doivent pas avoir de transition */
+/* On garde les exceptions pour référence future si besoin */
 .no-transition, 
 .no-transition *,
 svg *,
@@ -38,50 +40,6 @@ svg *,
 button:active,
 button:focus {
   transition: none !important;
-}
-
-/* Ajoutez cette classe */
-.disable-transitions-on-load {
-  transition: none !important;
-}
-
-.disable-transitions-on-load * {
-  transition: none !important;
-}
-
-/* Animation de dégradé */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.bg-size-200 {
-  background-size: 200% 200%;
-}
-
-.animate-gradient {
-  animation: gradient 8s ease infinite;
-}
-
-/* Utilisez cette classe pour les textes animés */
-.animate-pulse-text {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
 }
 
 
