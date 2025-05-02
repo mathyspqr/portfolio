@@ -392,7 +392,7 @@ export default function Home() {
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold mb-2">Application Infirmière à Domicile</h3>
                   <p className="text-foreground/80 mb-4 flex-grow">
-                    Application web pour un cabinet d'infirmières avec gestion d'agenda, cartographie et itinéraires optimisés.
+                    Application web pour un cabinet d&apos;infirmières avec gestion d&apos;agenda, cartographie et itinéraires optimisés.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
@@ -474,7 +474,7 @@ export default function Home() {
                 setActiveProject({
                   title: "Spotilike",
                   description:
-                    "Reproduction de l'application Spotify, permettant de gérer des playlists et écouter de la musique.",
+                    "Reproduction de l&apos;application Spotify, permettant de gérer des playlists et écouter de la musique.",
                   features: [
                     "Gestion des playlists",
                     "Lecture de musique",
@@ -503,7 +503,7 @@ export default function Home() {
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold mb-2">Spotilike</h3>
                   <p className="text-foreground/80 mb-4 flex-grow">
-                    Reproduction de l'application Spotify, permettant de gérer des playlists et écouter de la musique.
+                    Reproduction de l&apos;application Spotify, permettant de gérer des playlists et écouter de la musique.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
@@ -665,51 +665,6 @@ export default function Home() {
           {/* Partie Compétences - Refonte */}
           <h3 className="text-2xl font-semibold mb-8 text-center">Compétences techniques</h3>
 
-          {/* Nouvelle section - Expérience */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="mb-10 bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6"
-          >
-            <h4 className="text-lg font-medium mb-4 text-blue-500 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              <span>Expérience & Projets</span>
-            </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-black/[.02] dark:bg-white/[.03] rounded-lg p-4">
-                <div className="flex items-center gap-3 mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
-                  <h5 className="font-medium">+15 projets réalisés</h5>
-                </div>
-                <p className="text-foreground/80 text-sm">
-                  Applications web responsives, outils d'analyse de données, intégrations IA
-                </p>
-              </div>
-              <div className="bg-black/[.02] dark:bg-white/[.03] rounded-lg p-4">
-                <div className="flex items-center gap-3 mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                  <h5 className="font-medium">~2000 heures de développement</h5>
-                </div>
-                <p className="text-foreground/80 text-sm">
-                  3 ans d'expérience (alternance, projets personnels, études)
-                </p>
-              </div>
-            </div>
-          </motion.div> */}
-
           {/* Technologies maîtrisées */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -733,9 +688,8 @@ export default function Home() {
               <div className="bg-black/[.01] dark:bg-white/[.02] p-4 rounded-lg">
                 <h5 className="font-medium mb-3 pb-2 border-b border-black/5 dark:border-white/5 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-orange-500">
-                    <path d="M2 9l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"></path>
-                    <polyline points="12 15 16 11 12 7"></polyline>
-                    <line x1="8" y1="11" x2="16" y2="11"></line>
+                    <path d="M2 9l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6"></path>
+                    <path d="M9 22V12H15V22"></path>
                   </svg>
                   <span>Frontend</span>
                 </h5>
@@ -1139,7 +1093,7 @@ export default function Home() {
                       <li>Développement de nouvelles fonctionnalités pour une application SaaS</li>
                       <li>Optimisation des performances et de l'accessibilité</li>
                       <li>Mise en place de tests automatisés</li>
-                      <li>Collaboration avec l'équipe design pour implémenter des interfaces utilisateur</li>
+                      <li>Collaboration avec l&apos;équipe design pour implémenter des interfaces utilisateur</li>
                     </ul>
                     <div className="flex flex-wrap gap-2 mt-3">
                       <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">React</span>
@@ -1196,7 +1150,7 @@ export default function Home() {
                     </p>
                     <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
                       <li>Spécialisation en applications web avancées</li>
-                      <li>Projet de fin d'études: Plateforme e-commerce avec React et Node.js</li>
+                      <li>Projet de fin d&apos;études: Plateforme e-commerce avec React et Node.js                      </li>
                       <li>Stage de 6 mois en développement web</li>
                       <li>Certification en Développement Web Full Stack</li>
                     </ul>
@@ -1415,7 +1369,7 @@ export default function Home() {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
           </a>
