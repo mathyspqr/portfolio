@@ -155,11 +155,11 @@ export default function Home() {
         setFormStatus(prev => ({ ...prev, success: false }));
       }, 5000);
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       setFormStatus({
         loading: false,
         success: false,
-        error: error.message
+        error: error instanceof Error ? error.message : "Une erreur inconnue s'est produite"
       });
     }
   };
