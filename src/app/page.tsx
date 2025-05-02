@@ -4,6 +4,14 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
+// Définissez un type pour vos projets
+type Project = {
+  title: string;
+  description: string;
+  features: string[];
+  technologies: string[];
+};
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState("accueil");
@@ -18,7 +26,7 @@ export default function Home() {
     success: false,
     error: null
   });
-  const [activeProject, setActiveProject] = useState(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   const accueilRef = useRef<HTMLElement>(null);
   const projetsRef = useRef<HTMLElement>(null);
@@ -147,7 +155,7 @@ export default function Home() {
         setFormStatus(prev => ({ ...prev, success: false }));
       }, 5000);
 
-    } catch (error) {
+    } catch (error: any) {
       setFormStatus({
         loading: false,
         success: false,
