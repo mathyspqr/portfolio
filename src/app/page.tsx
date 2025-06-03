@@ -1242,7 +1242,7 @@ export default function Home() {
                   <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
                   <div className="ml-10">
                     <h4 className="text-xl font-semibold mb-2">Bachelor Développeur IA et Data Science - EPSI</h4>
-                    <p className="text-sm text-foreground/60 mb-3">2024 - 2025 (Prévu)</p>
+                    <p className="text-sm text-foreground/60 mb-3">2024 - 2025</p>
                     <p className="text-foreground/80 mb-4">
                       Bachelor Développeur en Intelligence Artificielle et Data Science, option FullStack.
                     </p>
