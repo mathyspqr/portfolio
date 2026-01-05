@@ -63,7 +63,7 @@ export async function POST(request: Request) {
       { status: 200 }
     );
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Log détaillé
     console.error("Erreur lors de l'envoi de l'email :");
     if (axios.isAxiosError(error)) {
@@ -73,13 +73,13 @@ export async function POST(request: Request) {
       console.error(error);
     }
 
+    const errorMessage = 
+      (axios.isAxiosError(error) && error.response?.data?.message) ||
+      (error instanceof Error && error.message) ||
+      "Erreur inconnue lors de l'envoi de l'email";
+
     return NextResponse.json(
-      {
-        error:
-          error?.response?.data?.message ||
-          error?.message ||
-          "Erreur inconnue lors de l'envoi de l'email"
-      },
+      { error: errorMessage },
       { status: 500 }
     );
   }
