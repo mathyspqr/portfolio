@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 
-export async function POST(request) {
+export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
 
@@ -12,16 +12,32 @@ export async function POST(request) {
       );
     }
 
+    // Validation simple de l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Adresse email invalide' },
+        { status: 400 }
+      );
+    }
+
     const API_KEY = process.env.BREVO_API_KEY;
-    
+
+    if (!API_KEY || API_KEY === 'undefined') {
+      return NextResponse.json(
+        { error: 'Clé API Brevo manquante ou invalide' },
+        { status: 500 }
+      );
+    }
+
     const data = {
       sender: {
-        name: name,
-        email: email
+        name,
+        email
       },
       to: [
         {
-          email: "mathys0@hotmail.fr", 
+          email: "mathys0@hotmail.fr",
           name: "Votre Nom"
         }
       ],
@@ -46,10 +62,24 @@ export async function POST(request) {
       { success: true, message: 'Email envoyé avec succès' },
       { status: 200 }
     );
-  } catch (error) {
-    console.error('Erreur lors de l\'envoi de l\'email:', error);
+
+  } catch (error: any) {
+    // Log détaillé
+    console.error("Erreur lors de l'envoi de l'email :");
+    if (axios.isAxiosError(error)) {
+      console.error("Message :", error.message);
+      console.error("Réponse :", error.response?.data || error.toJSON());
+    } else {
+      console.error(error);
+    }
+
     return NextResponse.json(
-      { error: 'Erreur lors de l\'envoi de l\'email' },
+      {
+        error:
+          error?.response?.data?.message ||
+          error?.message ||
+          "Erreur inconnue lors de l'envoi de l'email"
+      },
       { status: 500 }
     );
   }

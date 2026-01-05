@@ -10,6 +10,7 @@ type Project = {
   description: string;
   features: string[];
   technologies: string[];
+  url?: string;
 };
 
 export default function Home() {
@@ -604,6 +605,131 @@ export default function Home() {
               </div>
             </motion.div>
 
+            {/* Projet 5 - ChatFlow */}
+            <motion.div
+              className="group cursor-pointer h-full"
+              whileHover={{ y: -10, transition: { duration: 0.2 } }}
+              onClick={() =>
+                setActiveProject({
+                  title: "ChatFlow",
+                  description:
+                    "Application de messagerie temps réel complète permettant aux utilisateurs de communiquer instantanément. Inclut un système d'amis, des messages privés, des salons de discussion, et une interface moderne avec thème sombre/clair.",
+                  features: [
+                    "Messagerie temps réel avec WebSockets",
+                    "Système d'amis et gestion des contacts",
+                    "Messages privés et salons de discussion",
+                    "Authentification sécurisée avec Supabase",
+                    "Interface responsive avec thème sombre/clair",
+                    "Notifications en temps réel",
+                    "Gestion des statuts en ligne/hors ligne",
+                  ],
+                  technologies: ["Next.js", "Supabase", "Express.js"],
+                  url: "https://chatflow.mathysdev.com",
+                })
+              }
+            >
+              <div className="rounded-xl overflow-hidden border border-black/[.08] dark:border-white/[.145] transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/10 flex flex-col h-full">
+                <div className="aspect-video relative overflow-hidden">
+                  {/* Remplacer l'image par un dégradé de couleurs */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-800 flex items-center justify-center">
+                    <div className="text-center p-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                      <span className="text-white font-bold text-xl">ChatFlow</span>
+                    </div>
+                  </div>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+                  {/* Badge "Voir le projet" */}
+                  <div className="absolute bottom-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 pointer-events-none">
+                    Voir le projet
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold mb-2">ChatFlow</h3>
+                  <p className="text-foreground/80 mb-4 flex-grow">
+                    Application de messagerie temps réel avec une interface moderne et intuitive.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      Next.js
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      Supabase
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      Express.js
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Projet 6 - IA Comptable */}
+            <motion.div
+              className="group cursor-pointer h-full"
+              whileHover={{ y: -10, transition: { duration: 0.2 } }}
+              onClick={() =>
+                setActiveProject({
+                  title: "IA Comptable",
+                  description:
+                    "Système d'intelligence artificielle pour la comptabilité qui suggère automatiquement des comptes via Machine Learning. L'application comprend un modèle d'IA entraîné et une API FastAPI qui interroge le modèle, avec une interface Angular pour afficher et traiter les informations.",
+                  features: [
+                    "Suggestion automatique de comptes comptables",
+                    "Modèle de Machine Learning entraîné",
+                    "API FastAPI pour interroger le modèle IA",
+                    "Interface Angular pour visualisation et traitement",
+                    "Analyse intelligente des écritures comptables",
+                    "Prédictions basées sur l'historique des données",
+                  ],
+                  technologies: ["Python", "FastAPI", "Machine Learning", "Angular"],
+                })
+              }
+            >
+              <div className="rounded-xl overflow-hidden border border-black/[.08] dark:border-white/[.145] transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/10 flex flex-col h-full">
+                <div className="aspect-video relative overflow-hidden">
+                  {/* Remplacer l'image par un dégradé de couleurs */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-indigo-800 flex items-center justify-center">
+                    <div className="text-center p-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                      <span className="text-white font-bold text-xl">IA Comptable</span>
+                    </div>
+                  </div>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+                  {/* Badge "Voir le projet" */}
+                  <div className="absolute bottom-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 pointer-events-none">
+                    Voir le projet
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold mb-2">IA Comptable</h3>
+                  <p className="text-foreground/80 mb-4 flex-grow">
+                    Suggestion automatique de comptes via Machine Learning avec API FastAPI et interface Angular.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      Python
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      FastAPI
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      Machine Learning
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      Angular
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Carte "Et plus encore..." */}
             <motion.div
               className="group cursor-pointer h-full col-span-1 md:col-span-3 lg:col-span-3"
@@ -1029,6 +1155,121 @@ export default function Home() {
             </div>
           </motion.div>
 
+          {/* Intelligence Artificielle & Data Science */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="mb-10 bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6"
+          >
+            <h4 className="text-lg font-medium mb-4 text-blue-500 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+              <span>Intelligence Artificielle & Data Science</span>
+            </h4>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Langages de programmation pour IA */}
+              <div className="bg-black/[.01] dark:bg-white/[.02] p-4 rounded-lg">
+                <h5 className="font-medium mb-3 pb-2 border-b border-black/5 dark:border-white/5 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-500">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14,2 14,8 20,8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10,9 9,9 8,9"></polyline>
+                  </svg>
+                  <span>Langages & Frameworks</span>
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14,2 14,8 20,8"></polyline>
+                    </svg>
+                    Python
+                  </span>
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-500">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M9 12l2 2 4-4"></path>
+                    </svg>
+                    scikit-learn
+                  </span>
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm opacity-75">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-500">
+                      <path d="M3 3v18h18"></path>
+                      <path d="M18 17V9"></path>
+                      <path d="M13 17V5"></path>
+                      <path d="M8 17v-3"></path>
+                    </svg>
+                    Pandas (notions)
+                  </span>
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm opacity-75">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
+                      <path d="M3 3v18h18"></path>
+                      <path d="M18 9V3"></path>
+                      <path d="M13 9V3"></path>
+                      <path d="M8 9v12"></path>
+                    </svg>
+                    NumPy (notions)
+                  </span>
+                </div>
+              </div>
+
+              {/* Traitement de données & ML */}
+              <div className="bg-black/[.01] dark:bg-white/[.02] p-4 rounded-lg">
+                <h5 className="font-medium mb-3 pb-2 border-b border-black/5 dark:border-white/5 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14,2 14,8 20,8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10,9 9,9 8,9"></polyline>
+                  </svg>
+                  <span>Traitement de données & ML</span>
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-500">
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                      <polyline points="7.5 4.27 16.5 9.6"></polyline>
+                      <polyline points="16.5 9.6 12 12.46 7.5 9.6"></polyline>
+                      <polyline points="7.5 9.6 12 12.46 16.5 14.4"></polyline>
+                    </svg>
+                    Machine Learning
+                  </span>
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
+                      <path d="M3 3v18h18"></path>
+                      <path d="M18 17V9"></path>
+                      <path d="M13 17V5"></path>
+                      <path d="M8 17v-3"></path>
+                    </svg>
+                    Data Analysis
+                  </span>
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                      <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                      <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                    </svg>
+                      Traitement de données
+                  </span>
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm opacity-75">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-500">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    NLP (notions)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Soft skills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1175,6 +1416,28 @@ export default function Home() {
                 <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
                   <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
                   <div className="ml-10">
+                    <h4 className="text-xl font-semibold mb-2">Micro-Entreprise - Développement Web</h4>
+                    <p className="text-sm text-foreground/60 mb-3">2025 - Maintenant</p>
+                    <p className="text-foreground/80 mb-4">
+                      Création de ma micro-entreprise spécialisée dans le développement web, offrant des services de création de web apps, sites vitrines et boutiques e-commerce.
+                    </p>
+                    <ul className="list-disc ml-5 mb-4 text-foreground/70 space-y-1">
+                      <li>Développement d&apos;applications web modernes</li>
+                      <li>Création de sites vitrines professionnels</li>
+                      <li>Conception de boutiques e-commerce performantes</li>
+                    </ul>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">React</span>
+                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Next.js</span>
+                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">Node.js</span>
+                      <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">E-commerce</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-black/[.03] dark:bg-white/[.04] rounded-lg p-6 relative">
+                  <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
+                  <div className="ml-10">
                     <h4 className="text-xl font-semibold mb-2">Développeur Web - Logeas</h4>
                     <p className="text-sm text-foreground/60 mb-3">Août 2022 - Septembre 2025 (Alternance)</p>
                     <p className="text-foreground/80 mb-4">
@@ -1228,7 +1491,7 @@ export default function Home() {
                   <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-blue-500/50"></div>
                   <div className="ml-10">
                     <h4 className="text-xl font-semibold mb-2">Mastère Lead Dev Xpert - IPI</h4>
-                    <p className="text-sm text-foreground/60 mb-3">2025 - 2027 (Prévu)</p>
+                    <p className="text-sm text-foreground/60 mb-3">2026 - 2028 (Prévu)</p>
                     <p className="text-foreground/80 mb-4">
                       Mastère professionnel Lead Dev Xpert : Expert en développement logiciel.
                     </p>
@@ -1709,7 +1972,22 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-6 flex justify-end">
+            <div className="mt-6 flex justify-end gap-3">
+              {activeProject.url && (
+                <a
+                  href={activeProject.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 flex items-center gap-2"
+                >
+                  Voir le projet
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              )}
               <button
                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 flex items-center gap-2"
                 onClick={() => setActiveProject(null)}
