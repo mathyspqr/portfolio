@@ -730,6 +730,72 @@ export default function Home() {
               </div>
             </motion.div>
 
+            {/* Projet 7 - Boutique E-commerce */}
+            <motion.div
+              className="group cursor-pointer h-full"
+              whileHover={{ y: -10, transition: { duration: 0.2 } }}
+              onClick={() =>
+                setActiveProject({
+                  title: "Boutique E-commerce",
+                  description:
+                    "Boutique e-commerce créée avec Shopify, plateforme leader du commerce en ligne. Personnalisation complète du thème, intégration de fonctionnalités avancées et optimisation pour une expérience d'achat fluide.",
+                  features: [
+                    "Personnalisation complète du thème Shopify",
+                    "Intégration d'applications et fonctionnalités avancées",
+                    "Optimisation de l'expérience utilisateur",
+                    "Configuration des méthodes de paiement",
+                    "Gestion des produits et inventaire",
+                    "SEO et optimisation des performances",
+                  ],
+                  technologies: ["Shopify", "Liquid", "JavaScript", "CSS", "HTML"],
+                })
+              }
+            >
+              <div className="rounded-xl overflow-hidden border border-black/[.08] dark:border-white/[.145] transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/10 flex flex-col h-full">
+                <div className="aspect-video relative overflow-hidden">
+                  {/* Remplacer l'image par un dégradé de couleurs */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-emerald-800 flex items-center justify-center">
+                    <div className="text-center p-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                      </svg>
+                      <span className="text-white font-bold text-xl">E-commerce</span>
+                    </div>
+                  </div>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+                  {/* Badge "Voir le projet" */}
+                  <div className="absolute bottom-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 pointer-events-none">
+                    Voir le projet
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold mb-2">Boutique E-commerce</h3>
+                  <p className="text-foreground/80 mb-4 flex-grow">
+                    Boutique e-commerce créée avec Shopify, personnalisation du thème et optimisation UX.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      Shopify
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      Liquid
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      JavaScript
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      CSS
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-black/[.05] dark:bg-white/[.06]">
+                      HTML
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Carte "Et plus encore..." */}
             <motion.div
               className="group cursor-pointer h-full col-span-1 md:col-span-3 lg:col-span-3"
@@ -960,6 +1026,12 @@ export default function Home() {
                       <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z"></path>
                     </svg>
                     Next.js
+                  </span>
+                  <span className="px-3 py-1.5 rounded-full bg-black/[.05] dark:bg-white/[.06] flex items-center gap-1.5 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-600">
+                      <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    Shopify
                   </span>
                 </div>
               </div>
